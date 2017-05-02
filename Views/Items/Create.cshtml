@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "To Do List - Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model ToDoList.Models.Item
+
+<h4>Add a new task</h4>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Description)
+    @Html.TextBoxFor(model => model.Description)
+
+    @Html.LabelFor(model => model.CategoryId)
+    @Html.DropDownList("CategoryId")
+
+    <input type="submit" value="Add Task" class="btn btn-default"/>
+}
+<p>@Html.ActionLink("Back to list", "Index")</p>
+
